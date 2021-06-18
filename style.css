@@ -1,0 +1,35 @@
+.navbar {
+    background-color: blue;
+    display:flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 36px;
+
+}
+
+.search-header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.city-name {
+    font-size: 30px;
+}
+
+.forecast-date {
+    font-size: 18px;
+}
+
+.container {
+    margin-rig: 350px;
+
+}
+
+.col-sm-8 {
+    float:right;
+    margin-right: 100px;
+
+
+}

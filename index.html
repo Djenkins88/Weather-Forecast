@@ -17,22 +17,20 @@
     </nav>
     <br><br>
     <div class="container-fluid">
-        <div class="col-lg-12">
-            <div class="row ml-2 border border-dark rounded">
+        <div class="col-lg-10">
+            <div class="row ml-3 border border-dark rounded">
                 <div class="col-4 bg-light">
                     <p class="search-header my-1">Search for a city</p>
                     <div class="input-group mb-3">
-                        <input id="city-input" type="text" class="form-control" placeholder="Enter city name"
-                            aria-label="Enter city name">
+                        <input type="text" class="city-input" placeholder="Enter city name">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button" id="search-button">
                                 <i class="fas fa-search"></i>
-                                </button>
+                            </button>
                         </div>
                     </div>
                     <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
-                    <form id="history"></form>
-                </div>
+                    </div>
 
                 <div class="col-sm-1" id="current-weather">
                     <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
@@ -42,74 +40,54 @@
                     <p>UV index:<span class="current bg-danger rounded py-1 px-4 text-white" id="uv-index"></span></p>
                 </div>
             </div>
-
-
-            <!--Row for future data to be dumped here-->
+        </div>
+    </div>
             <div class="col-sm-12" id="future-weather">
-                <h3>5-Day Forecast:</h3>
-                <div class="row text-light">
+            <h3>5-Day Forecast:</h3>
+            <div class="row">
                     <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                        <div class="Date1"></div>
-                        <div class="Img1"></div><br><br>
-                        <div>Temp:</div>
-                        <div class="Temp1"></div>
-                        <div>Wind:</div>
-                        <div class="Wind1"></div>
-                        <div>Humidity:</div>
-                        <div class="Humidity1"></div>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                        <div class="Day">Monday</div>
+                        <div class="Temp">Temp:</div>
+                        <div class="Wind">Wind:</div>
+                        <div class="Humidity">Humidity:</div>
                     </div>
                     <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                        <div class="Date2"></div>
-                        <div class="Img2"></div><br><br>
-                        <div>Temp:</div>
-                        <div class="Temp2"></div>
-                        <div>Wind:</div>
-                        <div class="Wind2"></div>
-                        <div>Humidity:</div>
-                        <div class="Humidity2"></div>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                        <div class="Day">Tues</div>
+                        <div class="Temp">Temp:</div>
+                        <div class="Wind">Wind:</div>
+                        <div class="Humidity">Humidity:</div>
                     </div>
                     <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                        <div class="Date2"></div>
-                        <div class="Img2"></div><br><br>
-                        <div>Temp:</div>
-                        <div class="Temp2"></div>
-                        <div>Wind:</div>
-                        <div class="Wind2"></div>
-                        <div>Humidity:</div>
-                        <div class="Humidity2"></div>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                        <div class="Day">Wed</div>
+                        <div class="Temp">Temp:</div>
+                        <div class="Wind">Wind:</div>
+                        <div class="Humidity">Humidity:</div>
                     </div>
                     <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                        <div class="Date2"></div>
-                        <div class="Img2"></div><br><br>
-                        <div>Temp:</div>
-                        <div class="Temp2"></div>
-                        <div>Wind:</div>
-                        <div class="Wind2"></div>
-                        <div>Humidity:</div>
-                        <div class="Humidity2"></div>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                        <div class="Day">Thur</div>
+                        <div class="Temp">Temp:</div>
+                        <div class="Wind">Wind:</div>
+                        <div class="Humidity">Humidity:</div>
                     </div>
                     <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                        <div class="Date2"></div>
-                        <div class="Img2"></div><br><br>
-                        <div>Temp:</div>
-                        <div class="Temp2"></div>
-                        <div>Wind:</div>
-                        <div class="Wind2"></div>
-                        <div>Humidity:</div>
-                        <div class="Humidity2"></div>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                        <div class="Day">Fri</div>
+                        <div class="Temp">Temp:</div>
+                        <div class="Wind">Wind:</div>
+                        <div class="Humidity">Humidity:</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</body>
-
-
-
-
-<script scr="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-<script src="script.js"></script>
+    
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script scr="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="script2.js"></script>
 </body>
 
 </html>

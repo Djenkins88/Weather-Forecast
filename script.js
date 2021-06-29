@@ -1,15 +1,15 @@
 //bring over all elements from html
-var clearButton = document.getElementById("clear-history");
-var windSpeed = document.querySelector("#wind-speed");
-var uvIndex = document.getElementById("uv-index");
-var currentCity = document.querySelector("#current-city");
+const clearButton = document.getElementById("clear-history");
+const windSpeed = document.querySelector("#wind-speed");
+const uvIndex = document.getElementById("uv-index");
+const currentCity = document.querySelector("#current-city");
 const inputValue = document.querySelector(".city-input");
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
 const currentWeatherItemsEl = document.getElementById("current-weather-items");
 const timezone = document.getElementById("time-zone");
 const countryEl = document.getElementById("country");
-const weatherforecastEl = document.getElementById("weather-forecast");
+const weatherForecastEl = document.getElementById("weather-forecast");
 const currentTempEl = document.getElementById("current-temp");
 
 // list for date
@@ -62,7 +62,7 @@ searchButtonEl.addEventListener("click", function () {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=` +
       inputValue.value +
-      "&appid=47af1566274fcb96decc14e0dee64957&units=metric"
+      "&appid=47af1566274fcb96decc14e0dee64957&units=imperial"
   )
     .then((response) => response.json())
     .then((data) => {
@@ -98,7 +98,7 @@ searchButtonEl.addEventListener("click", function () {
       let { latitude, longitude } = success.coords;
 
       fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=47af1566274fcb96decc14e0dee64957`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=47af1566274fcb96decc14e0dee64957&units=imperial`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -107,53 +107,37 @@ searchButtonEl.addEventListener("click", function () {
 
           console.log(data);
           showWeatherData(data);
-          localStorage.setItem("inputValue", JSON.stringify(inputValue));
         });
     });
   }
 });
 
 function showWeatherData(data) {
-  var TempValue = data["current"]["temp"];
-  var HumidityValue = data["current"]["humidity"];
-  var windSpeedValue = data["current"]["wind_speed"];
-
-  temperature.innerHTML = currentTemperatureValue + "&#176F";
-  humidity.innerHTML = currentHumidityValue + "%";
-  windSpeed.innerHTML = windSpeedValue + "MPH";
   timezone.innerHTML = data.timezone;
-  countryEl.innerHTML = data.lat + "N" + data.lon + "E";
-
+  countryEl.innerHTML = data.lat + 'N' + data.lon+'E'
   let otherDayforcast = "";
   data.daily.forEach((day, idx) => {
     if (idx == 0) {
       currentTempEl.innerHTML = `
-        <div class="weather-forecast-item">
-                <img src="http://openweathermap.org/img/wn/${
-                  day.weather[0].icon
-                }@2x.png" alt="weather icon" class="w-icon">
-                <div class="day">${window
-                  .moment(day.dt * 1000)
-                  .format("ddd")}</div>
-                <div class="temp">Temp - ${day.temp}</div>
-                <div class="wind-speed">Wind-speed - ${day.Wind_Speed}</div>
-                <div class="humidty">Humidity -${day.Humidity}</div>
-            </div>`;
+      <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+      <div class="others">
+          <div class="day">${window.moment(day.dt * 1000).format("ddd")}</div>
+          <div class="temp">Temp  ${day.temp.day}</div>
+          <div class="wind-speed">Wind-speed ${day.wind_speed}</div>
+          <div class="humidty">Humidity ${day.humidity}</div>
+      </div>`
+      
     } else {
       otherDayforcast += `
         <div class="weather-forecast-item">
-                <img src="http://openweathermap.org/img/wn/${
-                  day.weather[0].icon
-                }@2x.png" alt="weather icon" class="w-icon">
-                <div class="day">${window
-                  .moment(day.dt * 1000)
-                  .format("ddd")}</div>
-                <div class="temp">Temp - ${day.temp}</div>
-                <div class="wind-speed">Wind-speed - ${day.Wind_Speed}</div>
-                <div class="humidty">Humidity -${day.Humidity}</div>
+                <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+                <div class="day">${window.moment(day.dt * 1000).format("ddd")}</div>
+                <div class="temp">Temp: ${day.temp.day}</div>
+                <div class="wind-speed">Windspeed:  ${day.wind_speed}</div>
+                <div class="humidty">Humidity: ${day.humidity}</div>
             </div>`;
     }
   });
 
-  weatherforecastEl.innerHTML = otherDayforcast;
+  weatherForecastEl.innerHTML = otherDayforcast;
 }

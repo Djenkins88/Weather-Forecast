@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>7 Day Weather Forcast</title>
+</head>
+
+<body>
+    <div class="search">
+        <p class="search-header my-1">Search for a city</p>
+        <div class="input-group mb-3">
+            <input type="text" class="city-input" placeholder="Enter city name">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="current-info">
+                <div class="date-container">
+                    <div class="time" id="time">
+                        12:30 <span id="am-pm">PM</span>
+                    </div>
+                    <div class="date" id="date">
+                        Monday, 24 May
+                    </div>
+                    <div class="others" id="current-weather-items">
+                        <div class="col-sm-1" id="current-weather">
+                            <img src="http://openweathermap.org/img/wn/10d@2x.png">
+                            <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+                            <p>Temperature:<span class="current" id="temperature"></span></p>
+                            <p>Humidity:<span class="current" id="humidity"></span></p>
+                            <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+                            <p>UV index:<span class="current bg-danger rounded py-1 px-4 text-white"
+                                    id="uv-index"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="place-container">
+                    <div class="time-zone" id="time-zone"></div>
+                    <div id="country" class="country">IN</div>
+                </div>
+            </div>
+        </div>
+        <div class="future-forecast">
+            <div class="today" id="current-temp">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="others">
+                    <div class="day">Monday</div>
+                    <div class="temp">Temp</div>
+                    <div class="wind-speed">Wind-speed</div>
+                    <div class="humidty">Humidity</div>
+                </div>
+            </div>
+
+            <div class="weather-forecast" id="weather-forecast">
+                <div class="weather-forecast-item">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="day">Monday</div>
+                    <div class="temp">Temp</div>
+                    <div class="wind-speed">Wind-speed</div>
+                    <div class="humidty">Humidity</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="day">Tue</div>
+                    <div class="temp">Temp</div>
+                    <div class="wind-speed">Wind-speed</div>
+                    <div class="humidty">Humidity</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="day">Wed</div>
+                    <div class="temp">Temp</div>
+                    <div class="wind-speed">Wind-speed</div>
+                    <div class="humidty">Humidity</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="day">Thur</div>
+                    <div class="temp">Temp</div>
+                    <div class="wind-speed">Wind-speed</div>
+                    <div class="humidty">Humidity</div>
+                </div>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+                integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="script.js"></script>
+</body>
+
+</html>

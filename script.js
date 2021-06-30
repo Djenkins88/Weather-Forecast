@@ -1,4 +1,4 @@
-//bring over all elements from html
+//bring over all elements from html.
 const clearButton = document.getElementById("clear-history");
 const windSpeed = document.querySelector("#wind-speed");
 const uvIndex = document.getElementById("uv-index");
@@ -123,8 +123,8 @@ function showWeatherData(data) {
       <div class="others">
           <div class="day">${window.moment(day.dt * 1000).format("ddd")}</div>
           <div class="temp">Temp  ${day.temp.day}</div>
-          <div class="wind-speed">Wind-speed ${day.wind_speed}</div>
           <div class="humidty">Humidity ${day.humidity}</div>
+          <div class="wind-speed">Wind-speed ${day.wind_speed}</div>
       </div>`
       
     } else {
@@ -133,8 +133,8 @@ function showWeatherData(data) {
                 <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
                 <div class="day">${window.moment(day.dt * 1000).format("ddd")}</div>
                 <div class="temp">Temp: ${day.temp.day}</div>
-                <div class="wind-speed">Windspeed:  ${day.wind_speed}</div>
                 <div class="humidty">Humidity: ${day.humidity}</div>
+                <div class="wind-speed">Windspeed:  ${day.wind_speed}</div>
             </div>`;
     }
   });
